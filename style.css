@@ -14,12 +14,13 @@
   --colorTheme: #2a292e;
   --color6:#dadce0;
   --color7:#202124;
+  --color8:#404040;
   /*--------FONT AND TYPOGRAPHY---------------------------*/
   --title-font:"Roboto", sans-serif;
   --body-font: "Roboto", sans-serif;
-  --h1-font-size:3rem;
-  --h1-font-size-Mobile:2.6rem;
-  --h2-font-size:1.3rem;
+  --h1-font-size:1.9rem;
+  --h1-font-size-Mobile:1.9rem;
+  --h2-font-size:1.6rem;
   --h3-font-size:0.8125rem;
   --normal-plus: 1rem;
   --normal-font-size: 0.8125rem;
@@ -42,7 +43,6 @@
 }
 @media (min-width: 768px) {
   :root {
-    --h1-font-size:2.8rem;
     --h2-font-size:1.3rem;
     --h3-font-size:0.9375rem;
     --normal-font-size:0.8125rem;
@@ -73,18 +73,25 @@ html {
 h1 {
   font-family: var(--title-font);
   font-size: var(--h1-font-size-Mobile);
-  font-weight: var(--font-bold);
-  margin-bottom: 1.2rem;
+  font-weight: var(--font-normal);
+  margin-bottom: 0.5rem;
   color: var(--color4);
-  text-align: center;
+  text-align: left;
 }
 
 h2 {
   font-family: var(--body-font);
-  font-weight: var(--font-medium);
-  margin-bottom: var(--mb-100);
+  font-weight: var(--font-regular);
+  margin-bottom: 2rem;
   font-size: var(--h2-font-size);
   color: #adadad;
+}
+
+h3 {
+  font-family: var(--title-font);
+  font-size: var(--h3-font-size);
+  font-weight: var(--font-medium);
+  margin-bottom: 0rem;
 }
 
 p {
@@ -92,7 +99,7 @@ p {
   color: var(--color4);
   font-weight: var(--font-light);
   font-size: var(--normal-plus);
-  line-height: 1.7rem;
+  line-height: 1.6rem;
 }
 
 ul {
@@ -112,7 +119,7 @@ main {
   width: 100%;
   display: block;
   margin: 4.6875rem auto 0;
-  padding: 0 5%;
+  padding: 0 2rem;
 }
 
 .button {
@@ -120,14 +127,14 @@ main {
   display: inline-block;
   background-color: var(--color4);
   color: var(--color0);
-  padding: 0.8rem 3rem;
+  padding: 0.5rem 2rem;
   font-weight: var(--font-medium);
   font-size: var(--small-font-size);
   transition: 0.3s;
 }
 
 .button:hover {
-  background-color: var(--color3);
+  background-color: var(--color8);
 }
 
 .buttonBack {
@@ -137,10 +144,10 @@ main {
 }
 
 .buttonBack:hover {
-  background-color: transparent;
-  color: var(--color4);
+  background-color: --color8;
+  color: var(--color0);
   font-weight: var(--font-semi-bold);
-  border: 1px solid var(--color4);
+  border: 1px solid var(--color8);
 }
 
 .buttonThemeBody {
@@ -164,68 +171,84 @@ main {
 }
 
 .main_header {
-  text-align: center;
-  margin-bottom: var(--mb-50);
+  text-align: left;
+  margin-bottom: 4rem;
 }
 
 /*===================== FIN MAIN_HEADER ==========================================*/
 /*===================== DEBUT ACHETER==========================================*/
-.main__body .intro {
-  padding: var(--mb-100) 0px var(--mb-30);
-  text-align: center;
+.main__body .introduction {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
-.main__body .intro h2 {
-  text-align: center;
-}
-.main__body .intro .intro_texte {
-  margin-bottom: var(--mb-30);
-}
-.main__body .intro p {
+
+.main__body .introduction_texte {
+  width: 100%;
+  margin-top: var(--mb-100);
+  margin-bottom: var(--mb-100);
   text-align: justify;
 }
-.main__body .intro .intro_texte--Button {
-  margin-bottom: var(--mb-100);
+
+.main__body .introduction_button {
+  text-align: left;
+  margin-top: 20px;
 }
 
-.intro_tools {
-  border-top: 1px solid var(--color6);
-  border-bottom: 1px solid var(--color6);
-  background-color: transparent;
-  margin: 0 auto;
-  margin-bottom: var(--mb-100);
-  padding: 1.8rem 0;
-}
-
-.intro_tools--inner {
+.main__body .introduction_infos {
+  width: 100%;
   display: flex;
-  text-align: center;
-  justify-content: center;
-  flex-wrap: wrap;
+  font-size: 11px;
+  margin: 2rem 0;
 }
 
-.buttonTools {
-  border: 1px solid var(--color6);
-  background-color: transparent;
-  color: #202124;
-  padding: 0.4rem 1rem;
-  border-radius: 10px;
-  margin: 5px 5px;
+.main__body .introduction_infos h3 {
+  font-size: 13px;
+  margin-bottom: 0.2rem;
 }
 
-.buttonTools:hover {
-  background-color: #f1f3f4;
-  color: #202124;
-  border: 1px solid var(--color0);
+.main__body .introduction_infos p {
+  font-size: 13px;
+}
+
+.main__body .introduction_infos--gauche {
+  width: 50%;
+}
+
+.gauche_item {
+  margin-bottom: 1.2rem;
+}
+
+.gauche_item:last-child {
+  margin-bottom: 0rem;
+}
+
+.main__body .introduction_infos--gauche p, .main__body .introduction_infos--droite p {
+  line-height: 1.3rem;
+}
+
+.main__body .introduction_infos--droite {
+  width: 50%;
+}
+
+.droite_item {
+  margin-bottom: 1.2rem;
+}
+
+.droite_item:last-child {
+  margin-bottom: 0rem;
 }
 
 /*------------- DEBUT BOARD ----------------------------------------------------*/
 .main__body .board .img_board--un {
-  margin-top: var(--mb-60);
+  margin-top: var(--mb-100);
 }
 .main__body .board .img_board--deux {
   padding-top: var(--mb-100);
   margin-bottom: var(--mb-100);
-  border-top: 1px solid var(--color6);
+}
+.main__body .board .img_board--trois {
+  margin-bottom: var(--mb-100);
 }
 
 /*------------- FIN BOARD ----------------------------------------------------*/
@@ -235,7 +258,7 @@ main {
   right: 1rem;
   bottom: -20%;
   background-color: var(--color4);
-  padding: 0.5rem;
+  padding: 0.35rem 0.5rem;
   border-radius: 0rem;
   z-index: var(--z-tooltip);
   transition: 0.4s;
@@ -243,7 +266,7 @@ main {
 }
 
 .scrollup:hover {
-  background-color: var(--color3);
+  background-color: var(--color8);
 }
 
 .scrollup__icon {
@@ -258,43 +281,90 @@ main {
 /*===================== DEBUT FOOTER ==========================================*/
 footer {
   width: 100%;
-  border-bottom: 1px solid var(--color4);
+  border-bottom: 1px solid var(--color0);
+  border-top: 1px solid #efefef;
 }
 
 .footer__inner {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--color4);
-  padding: 1.1rem 0;
+  background-color: var(--color0);
+  padding: 1.5rem 0;
 }
 
 .footer__inner p {
-  color: var(--color0);
+  color: var(--color4);
   padding: 0 0.625rem;
+  font-weight: var(--font-normal);
   font-family: var(--body-font);
-  font-size: var(--normal-font-size);
+  font-size: 14px;
 }
 
 /*===================== FIN FOOTER ==========================================*/
 /*===================== DEBUT RESPONSIVE ==========================================*/
-@media (min-width: 568px) {
-  .acheter__vente-line {
-    display: none;
-  }
-}
 @media (min-width: 768px) {
   h1 {
     font-size: var(--h1-font-size);
   }
 
+  main {
+    padding: 0 4rem;
+  }
+
+  .main_header {
+    text-align: left;
+    margin-bottom: 8rem;
+  }
+
+  .main_header h1 {
+    text-align: left;
+  }
+
+  .main_header h2 {
+    text-align: left;
+    margin-bottom: var(--mb-30);
+  }
+
+  .main__body .introduction {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .main__body .introduction_texte {
+    width: 60%;
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+    padding-right: 5rem;
+  }
+
+  .main__body .introduction_button {
+    text-align: left;
+    margin-top: 15px;
+  }
+
+  .main__body .introductionSuite_texte {
+    margin-top: 2rem;
+  }
+
+  .main__body .introduction_infos {
+    width: 40%;
+  }
+
+  .main__body .introduction_infos {
+    margin: 0;
+    padding-top: 0.4rem;
+  }
+
   .scrollup {
-    right: 0.2rem;
+    right: 0.5rem;
   }
 }
 @media (min-width: 962px) {
   .main {
     width: 1140px;
+    padding: 0 5rem;
   }
 
   p {
@@ -302,6 +372,22 @@ footer {
     color: var(--color4);
     font-weight: var(--font-light);
     font-size: var(--normal-plus);
+  }
+
+  .main__body .introduction_texte {
+    padding-right: 10rem;
+  }
+
+  .main__body .introductionSuite_texte {
+    margin-top: 2rem;
+  }
+
+  .main__body .introduction_texte {
+    width: 70%;
+  }
+
+  .main__body .introduction_infos {
+    width: 30%;
   }
 
   .scrollup {
